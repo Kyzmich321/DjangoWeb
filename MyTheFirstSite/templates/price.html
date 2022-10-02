@@ -1,0 +1,51 @@
+<section>
+  		<div class="container">
+  			<h1 class="text-3">SERVICE PACKAGES</h1>
+  			<div class="row justify-content-center">
+  				<div class="card product_card" style="width: 18rem; background-color: #cd7f32;">
+				  <div class="card-body">
+				    <h5 class="card-title">BRONZE</h5>
+				    <p class="card-text">The bronze subscription includes the following privileges: 30 free pizzas per month.</p>
+				    <h3>{{pc_1}} $</h3>
+				  </div>
+				</div>
+				<div class="card product_card" style="width: 18rem; background-color: #c0c0c0;">
+				  <div class="card-body">
+				    <h5 class="card-title">SILVER</h5>
+				    <p class="card-text">The silver subscription includes the following privileges: 75 free pizzas per month.</p>
+				    <h3>{{pc_2}} $</h3>
+				  </div>
+				</div>
+				<div class="card product_card" style="width: 18rem; background-color: #ffd700;">
+				  <div class="card-body">
+				    <h5 class="card-title">GOLD</h5>
+				    <p class="card-text">The gold subscription includes the following privileges: 150 free pizzas per month.</p>
+				    <h3>{{pc_3}} $</h3>
+				  </div>
+				</div>
+  			</div>
+  		</div>
+  	</section>
+  	<!-- Таблица -->
+  	<section>
+  		<div class="container">
+  			<h1 class="text-3">Service prices</h1>
+  			<table class="table table_one">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">Service</th>
+			      <th scope="col">Old price</th>
+			      <th scope="col">New price</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  {% for obj in price_table %}
+			    <tr>
+			      <td>{{ obj.pt_title }}</td>
+			      <td><del>{{ obj.pt_old_price }} $</del></td>
+			      <td>{{ obj.pt_new_price }} $</td>
+			    </tr>
+			  {% endfor %}
+			</table>
+  		</div>
+  	</section>

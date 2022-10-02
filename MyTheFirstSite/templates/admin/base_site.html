@@ -1,0 +1,25 @@
+{% extends "admin/base.html" %}
+{% load static %}
+<link href="{% static 'external.css' %}" rel="stylesheet">
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle %}
+<style>
+    body{
+    background: #c0ffd0;
+    }
+</style>
+
+
+{% endblock %}
+
+{% block branding %}
+
+<a class="logo-top" href="{% url 'Home'%}">
+	    <img src="{% static './img/Logo.jpg' %}" width="60" height="60" class="d-inline-block align-top" alt="" loading="lazy">
+	    Frips Crisp
+	  </a>
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

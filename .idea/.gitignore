@@ -1,5 +1,4 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/DjangoWeb.iml
-DjangoWeb/MyTheFirstSite/MyTheFirstSite/secret_settings.py
+/DjangoWeb/MyTheFirstSite/MyTheFirstSite/secret_settings.py

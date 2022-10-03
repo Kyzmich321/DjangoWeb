@@ -25,13 +25,18 @@ def first_page(request):
 
 def thanks(request):
     if request.POST:
+        form = OrderForm(request.POST)
         name = request.POST['name']
         phone = request.POST['phone']
         order = request.POST['order']
-        element = Order(order_name=name, order_phone=phone)
-        element.save()
-        SendTelegram(tg_name=name , tg_phone=phone, tg_order=order)
-        res = render(request, './thanks.html', {'name': name})
+
+        if form.is_valid:
+            element = Order(order_name=name, order_phone=phone)
+            element.save()
+            SendTelegram(tg_name=name , tg_phone=phone, tg_order=order)
+            res = render(request, './thanks.html', {'name': name})
+        else:
+            pass
     else:
         res = render(request, './thanks.html')
     return res

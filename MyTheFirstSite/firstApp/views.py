@@ -26,8 +26,8 @@ def first_page(request):
 def thanks(request):
     if request.POST:
         form = OrderForm(request.POST)
-        name = request.POST['name']
-        phone = request.POST['phone']
+        name = request.POST['order_name']
+        phone = request.POST['order_phone']
         order = request.POST['order']
 
         if form.is_valid:
